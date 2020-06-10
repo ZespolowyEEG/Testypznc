@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="row">
+    <div class="col-md-6" style="">
+        <div class="form-group" style="position: static;">
+			<form class="form-horizontal">
+			<fieldset>
+
+			<!-- Form Name -->
+			<legend>Formularz 1</legend>
+
+			<!-- Button (Double) -->
+			<div class="form-group">
+			<img src="3.png" class="img-fluid rounded" alt="Responsive image">
+			  <div class="col-md-8">
+				<a id = "btn_form_1" href="strona3.html">Formularz 1</a>
+			  </div>
+			</div>
+
+			</fieldset>
+			
+						<fieldset>
+
+			<!-- Form Name -->
+			<legend>Formularz 2</legend>
+
+			<!-- Button (Double) -->
+			<div class="form-group">
+			<img src="4.png" class="img-fluid rounded" alt="Responsive image">
+			  <div class="col-md-8">
+				<a id = "btn_form_2" href="strona4.html">Formularz 2</a>
+			  </div>
+			</div>
+
+			</fieldset>
+			</form>
+        </div>
+    </div>
+    <div class="col-md-6" style="">
+        <div class="form-group" style="position: static;">
+			<form class="form-horizontal">
+			<fieldset>
+
+			<!-- Form Name -->
+			<legend>Formularz 3</legend>
+
+			<!-- Button (Double) -->
+			<div class="form-group">
+			<img src="5.png" class="img-fluid rounded" alt="Responsive image">
+			  <div class="col-md-8">
+				<a id = "btn_form_3" href="strona5.html">Formularz 3</a>
+			  </div>
+			</div>
+
+			</fieldset>
+			
+						<fieldset>
+
+			<!-- Form Name -->
+			<legend>Formularz 4</legend>
+
+			<!-- Button (Double) -->
+			<div class="form-group">
+			<img src="6.png" class="img-fluid rounded" alt="Responsive image">
+			  <div class="col-md-8">
+				<a id = "btn_form_4" href="strona6.html">Formularz 4</a>
+			  </div>
+			</div>
+
+			</fieldset>
+			</form>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="js/bootstrap.min.js"></script>
+  
+  <script>
+        document.addEventListener("click", (e)=>{
+            let id = e.target.id;
+
+            if(!id.includes("form")){
+                return;
+            }
+
+            if (localStorage.getItem('FormWielowymiar') === null) {
+                localStorage.setItem("FormWielowymiar", JSON.stringify([]));
+            }
+            var values = JSON.parse(localStorage.getItem('FormWielowymiar'));
+            values.push(id.split('_')[2]);
+            localStorage.setItem('FormWielowymiar', JSON.stringify(values));
+        });
+    </script>
+  
+</body>
+</html>
